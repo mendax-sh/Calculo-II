@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#Marcos Lucas Pereira
 #Teste da segunda derivada
 from math import * #biblioteca contendo funções maatematicas como "raiz quadrada" 
 from sympy import * #biblioteca para calculo cinetifico (ex: derivadas, integrais")
