@@ -25,9 +25,8 @@ if (fx.count(("y") or ("Y"))):
     
 else: 
     pcx = solve(fy, y) #Resole a equação na derivada em relação a x
-    print ("resoltado = ", pcx)
     pcy = solve(fx, x) #resolve a equação em relação a y
-    print ("pcy =",pcy, "pcx = ",pcx)
+    
 
 
 l1c1 = fxx.subs([(x, pcx[0]),(y, pcy[0])]) #encontra o primeiro valor da matriz
