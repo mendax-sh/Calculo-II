@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #Marcos Lucas Pereira
 #Teste da segunda derivada
 from math import * #biblioteca contendo funções maatematicas como "raiz quadrada" 
@@ -18,10 +18,17 @@ fyy = diff(fy, y) #segunda derivada em relação a y
 fxy = diff(fx, y) # segunda derivada  de x em relaçlão a y 
 
 
+if (fx.count(("y") or ("Y"))):
+    pcx = solve(fy, x) #Resole a equação na derivada em relação a x
+    val = fx.subs(x, pcx[0]) #Subistitui o valor de x, para encontrar  o valor de y
+    pcy = solve(val, y) #resolve a equação em relação a y
+    
+else: 
+    pcx = solve(fy, y) #Resole a equação na derivada em relação a x
+    print ("resoltado = ", pcx)
+    pcy = solve(fx, x) #resolve a equação em relação a y
+    print ("pcy =",pcy, "pcx = ",pcx)
 
-pcx = solve(fy, x) #Resole a equação na derivada em relação a x
-val = fx.subs(x, pcx[0]) #Subistitui o valor de x, para encontrar  o valor de y
-pcy = solve(val, y) #resolve a equação em relação a y
 
 l1c1 = fxx.subs([(x, pcx[0]),(y, pcy[0])]) #encontra o primeiro valor da matriz
 l2c2 = fyy.subs([(x, pcx[0]),(y, pcy[0])]) #encontra o segundo valor da matriz
@@ -41,4 +48,3 @@ elif (d < 0):
     
 if (d == 0):
     print ('Ponto de sela')
-    
